@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import template from './index.html';
+
 const h1 = React.createElement('h1', { className: 'header', key: 'header' }, 'This is React');
 const p = React.createElement('p', { className: 'content', key: 'content' }, "And that's how it works.");
 
