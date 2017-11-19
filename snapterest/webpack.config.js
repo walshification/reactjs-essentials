@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/app.jsx',
+  entry: './src/app.js',
   output: {
     path: path.resolve('build'),
     filename: 'js/bundle.snapterest.js'
