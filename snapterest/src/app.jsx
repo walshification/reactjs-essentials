@@ -3,16 +3,21 @@ import ReactDOM from 'react-dom';
 
 import template from './index.html';
 
-const h1 = React.createElement('h1', { className: 'header', key: 'header' }, 'This is React');
-const p = React.createElement('p', { className: 'content', key: 'content' }, "And that's how it works.");
+class ReactClass extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isHidden: false,
+    };
+  }
+  render() {
+    if (this.state.isHidden) {
+      return null;
+    }
 
-const listOfItems = <ul className="list-of-items">
-                      <li className="item-1">Item 1</li>
-                      <li className="item-2">Item 2</li>
-                      <li className="item-3">Item 3</li>
-                    </ul>;
+    return React.createElement('h1', { className: 'header' }, 'React Component');
+  }
+};
 
-const reactFragment = [ h1, p, listOfItems ];
-const section = React.createElement('section', { className: 'container' }, reactFragment);
-
-ReactDOM.render(section, document.getElementById('react-application'));
+const reactComponentElement = React.createElement(ReactClass);
+const reactComponent = ReactDOM.render(reactComponentElement, document.getElementById('react-application'));
