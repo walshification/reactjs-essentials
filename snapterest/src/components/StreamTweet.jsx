@@ -37,6 +37,12 @@ class StreamTweet extends React.Component {
     window.snapterest.tweetHtml = componentDOMRepresentation.children[1].outerHTML;
   }
 
+  componentWillUnmount() {
+    console.log('[Snapterest] StreamTweet: 8. Running componentWillUnmount()');
+
+    delete window.snapterest;
+  }
+
   render() {
     return (
       <section>
