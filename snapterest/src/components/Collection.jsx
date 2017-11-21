@@ -36,14 +36,16 @@ class Collection extends React.Component {
       const handleRemoveTweetFromCollection = this.props.onRemoveTweetFromCollection;
 
       return (
-        <CollectionControls
-          numberOfTweetsInCollection={numberOfTweetsInCollection}
-          htmlMarkup={htmlMarkup}
-          onRemoveAllTweetsFromCollection={removeAllTweetsFromCollection} />
+        <div>
+          <CollectionControls
+            numberOfTweetsInCollection={numberOfTweetsInCollection}
+            htmlMarkup={htmlMarkup}
+            onRemoveAllTweetsFromCollection={removeAllTweetsFromCollection} />
 
-          <TweetList
-            tweets={tweets}
-            onRemoveTweetFromCollection={handleRemoveTweetFromCollection} />
+            <TweetList
+              tweets={tweets}
+              onRemoveTweetFromCollection={handleRemoveTweetFromCollection} />
+        </div>
       );
     }
 
