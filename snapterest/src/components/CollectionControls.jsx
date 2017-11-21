@@ -8,6 +8,9 @@ import Header from './Header.jsx';
 class CollectionControls extends React.Component {
   constructor(props) {
     super(props);
+    this.getHeaderText = this.getHeaderText.bind(this);
+    this.toggleEditCollectionName = this.toggleEditCollectionName.bind(this);
+    this.setCollectionName = this.setCollectionName.bind(this);
     this.state = {
       name: 'new',
       isEditingName: false
@@ -71,3 +74,5 @@ class CollectionControls extends React.Component {
     );
   }
 }
+
+module.exports = CollectionControls;

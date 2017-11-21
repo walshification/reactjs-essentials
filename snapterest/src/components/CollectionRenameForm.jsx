@@ -11,6 +11,10 @@ const inputStyle = {
 class CollectionRenameForm extends React.Component {
   constructor(props) {
     super(props);
+    this.setInputValue = this.setInputValue.bind(this);
+    this.handleInputValueChange = this.handleInputValueChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleFormCancel = this.handleFormCancel.bind(this);
     this.state = {
       inputValue: this.props.name
     };
@@ -23,14 +27,14 @@ class CollectionRenameForm extends React.Component {
   }
 
   handleInputValueChange(event) {
-    const inputVale = event.target.value;
+    const inputValue = event.target.value;
     this.setInputValue(inputValue);
   }
 
   handleFormSubmit(event) {
     event.preventDefault();
 
-    const colectionName = this.state.inputValue;
+    const collectionName = this.state.inputValue;
     this.props.onChangeCollectionName(collectionName);
   }
 

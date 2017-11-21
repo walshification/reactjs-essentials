@@ -16,11 +16,14 @@ const imageStyle = {
 };
 
 class Tweet extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   handleImageClick() {
+    console.log(this);
+    console.log(this.props);
     const tweet = this.props.tweet;
     const onImageClick = this.props.onImageClick;
 

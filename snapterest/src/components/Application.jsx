@@ -8,10 +8,13 @@ import template from '../index.html';
 class Application extends React.Component {
   constructor() {
     super();
+    this.addTweetToCollection = this.addTweetToCollection.bind(this);
+    this.removeTweetFromCollection = this.removeTweetFromCollection.bind(this);
+    this.removeAllTweetsFromCollection = this.removeAllTweetsFromCollection.bind(this);
     this.state = { collectionTweets: {} };
   }
 
-  addTweetCollection(tweet) {
+  addTweetToCollection(tweet) {
     const collectionTweets = this.state.collectionTweets;
     collectionTweets[tweet.id] = tweet;
     this.setState({

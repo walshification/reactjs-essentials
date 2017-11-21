@@ -6,6 +6,12 @@ import Header from './Header.jsx';
 import TweetList from './TweetList.jsx';
 
 class Collection extends React.Component {
+  constructor() {
+    super();
+    this.createHtmlMarkupStringOfTweetList = this.createHtmlMarkupStringOfTweetList.bind(this);
+    this.getListOfTweetIds = this.getListOfTweetIds.bind(this);
+    this.getNumberOfTweetsInCollection = this.getNumberOfTweetsInCollection.bind(this);
+  }
   createHtmlMarkupStringOfTweetList() {
     const htmlString = ReactDOMServer.renderToStaticMarkup(
       <TweetList tweets={this.props.tweets} />

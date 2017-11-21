@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import SnapkiteStreamClient from 'snapkite-stream-client';
 
 import StreamTweet from './StreamTweet.jsx';
@@ -7,6 +8,7 @@ import Header from './Header.jsx';
 class Stream extends React.Component {
   constructor(props) {
     super(props);
+    this.handleNewTweet = this.handleNewTweet.bind(this);
     this.state = {
       tweet: null
     }
