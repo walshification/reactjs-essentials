@@ -1,3 +1,5 @@
+import 'raf/polyfill';
+
 jest.dontMock('../Header.jsx');
 
 import React from 'react';
@@ -12,6 +14,9 @@ describe('Header component', () => {
     );
     const actualHeaderText = ReactDOM.findDOMNode(header).textContent;
     expect(actualHeaderText).toBe('Testing...');
+  });
+
+  it('renders a default header if none is provided', () => {
     const defaultHeader = TestUtils.renderIntoDocument(
       <Header />
     );
